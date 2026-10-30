@@ -1,0 +1,2 @@
+{"event_id":"a1","partition":"p0","sequence":1,"event_type":"credit","account_id":"alice","amount_cents":1000,"currency":"USD","occurred_at":"2026-01-01T00:00:00Z","causation_id":null,"payload":{},"signature":"a347132cde9ea4f983e7915f9bdee312b2464953ad7170f7cd3c54ab0731c0e2"}
+{"event_id":"a2","partition":"p0","sequence":2,"event_type":"debit","account_id":"alice","amount_cents":200,"currency":"USD","occurred_at":"2026-01-01T00:01:00Z","causation_id":"a1","payload":{},"signature":"bad"}

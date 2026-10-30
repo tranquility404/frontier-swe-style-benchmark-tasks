@@ -1,0 +1,4 @@
+Skipping image OS validation for hb__d100bb2983cbaaed2aa1d1635634a4fd: docker inspect returned 1
+Collecting main service artifacts
+Skipping image OS validation for hb__85c71f72e41a3754c8ea537924429a74: docker inspect returned 1
+Trial frontier-task-streaming-features__6v3FJhG failed: No reward file found at jobs\2026-10-30__17-20-00\frontier-task-streaming-features__6v3FJhG\verifier\reward.txt or jobs\2026-10-30__17-20-00\frontier-task-streaming-features__6v3FJhG\verifier\reward.json

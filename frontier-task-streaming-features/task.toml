@@ -1,0 +1,40 @@
+schema_version = "1.4"
+artifacts = ["/app/"]
+
+[task]
+name = "frontier/streaming-feature-engine"
+description = "Implement a deterministic event-time streaming feature engine with watermarks, late corrections, session windows, stream joins, and checkpoint recovery."
+authors = [{ name = "Aman", email = "amanverma404403@gmail.com" }]
+keywords = ["stream-processing", "watermarks", "late-data", "sessionization", "joins", "checkpointing"]
+
+[metadata]
+author_name = "Aman"
+author_email = "amanverma404403@gmail.com"
+category = "Data Systems"
+subcategory = "Streaming and Online Learning"
+difficulty = "hard"
+tags = ["event-time", "stream-processing", "state-recovery", "deterministic-replay"]
+expert_time_estimate_hours = 7.0
+difficulty_explanation = "The engine must produce the same features under arbitrary delivery order while handling bounded out-of-orderness, late updates that revise already emitted windows, session merges, temporal stream-stream joins, and crash recovery from compact checkpoints. Hidden episodes exercise watermark stalls, duplicate IDs, boundary timestamps, session transitive merges, and replay after a checkpoint."
+solution_explanation = "The reference uses a canonical event log, per-source watermarks, interval state with revision numbers, union-find session state, bounded join indexes, and checkpoint manifests that make recovery idempotent."
+verification_explanation = "The verifier compares exact feature revisions and final state against an independent model, permutes delivery order, injects duplicates and late data, kills and restarts the candidate between batches, and validates that a no-op candidate receives zero."
+
+[verifier]
+timeout_sec = 600
+environment_mode = "separate"
+
+[verifier.environment]
+network_mode = "public"
+cpus = 2
+memory_mb = 2048
+storage_mb = 4096
+
+[agent]
+timeout_sec = 72000
+
+[environment]
+build_timeout_sec = 600
+network_mode = "public"
+cpus = 2
+memory_mb = 2048
+storage_mb = 4096

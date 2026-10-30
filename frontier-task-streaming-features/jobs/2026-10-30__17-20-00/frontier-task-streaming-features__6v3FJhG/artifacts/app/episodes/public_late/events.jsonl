@@ -1,0 +1,4 @@
+{"event_id":"m1","source":"metric","key":"acct-1","event_time":"2026-01-01T00:01:00Z","ingest_time":"2026-01-01T00:01:01Z","value":2}
+{"event_id":"l1","source":"label","key":"acct-1","event_time":"2026-01-01T00:01:05Z","ingest_time":"2026-01-01T00:01:06Z","value":1}
+{"event_id":"m2","source":"metric","key":"acct-1","event_time":"2026-01-01T00:00:10Z","ingest_time":"2026-01-01T00:02:00Z","value":4}
+{"event_id":"m1","source":"metric","key":"acct-1","event_time":"2026-01-01T00:01:00Z","ingest_time":"2026-01-01T00:03:00Z","value":2}

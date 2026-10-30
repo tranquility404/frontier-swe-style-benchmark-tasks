@@ -1,0 +1,69 @@
+{
+  "episodes": {
+    "public_late": {
+      "checkpoint_digest": "12828d069efc0828fd3d92eb2ce43c6614f781ed9bdc8d7dc5739ffa025f4fac",
+      "counters": {
+        "accepted_events": 3,
+        "duplicates": 0,
+        "late_events": 1
+      },
+      "features": [
+        {
+          "count": 2,
+          "current": true,
+          "feature_id": "metric:acct-1:1767225600:1767225900",
+          "key": "acct-1",
+          "max": 4.0,
+          "mean": 3.0,
+          "min": 2.0,
+          "population_variance": 1.0,
+          "revision": 1,
+          "sum": 6.0,
+          "window_end": 1767225900,
+          "window_start": 1767225600
+        }
+      ],
+      "joins": [
+        {
+          "delta_seconds": -5.0,
+          "label_event_id": "l1",
+          "metric_event_id": "m1"
+        }
+      ],
+      "sessions": []
+    },
+    "public_sessions": {
+      "checkpoint_digest": "8518312ac5a02ad8d1c20eafd5bf2a44409dd1ef95272f13fc189632624c80e0",
+      "counters": {
+        "accepted_events": 3,
+        "duplicates": 0,
+        "late_events": 2
+      },
+      "features": [],
+      "joins": [],
+      "sessions": [
+        {
+          "end": "2026-01-01T00:00:40Z",
+          "event_ids": [
+            "a1",
+            "a2"
+          ],
+          "key": "u",
+          "session_id": "session:u:1767225600",
+          "start": "2026-01-01T00:00:00Z",
+          "tombstones": []
+        },
+        {
+          "end": "2026-01-01T00:03:00Z",
+          "event_ids": [
+            "a3"
+          ],
+          "key": "u",
+          "session_id": "session:u:1767225780",
+          "start": "2026-01-01T00:03:00Z",
+          "tombstones": []
+        }
+      ]
+    }
+  }
+}

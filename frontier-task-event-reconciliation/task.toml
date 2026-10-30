@@ -1,0 +1,40 @@
+schema_version = "1.4"
+artifacts = ["/app/"]
+
+[task]
+name = "frontier/event-reconciliation"
+description = "Implement a deterministic, auditable event-sourced reconciliation engine for a partitioned payment network with signed events, reversals, duplicate delivery, and Merkle proofs."
+authors = [{ name = "Aman", email = "amanverma404403@gmail.com" }]
+keywords = ["event-sourcing", "reconciliation", "byzantine-input", "idempotency", "merkle", "payments"]
+
+[metadata]
+author_name = "Aman"
+author_email = "amanverma404403@gmail.com"
+category = "Finance"
+subcategory = "Distributed Systems and Auditability"
+difficulty = "hard"
+tags = ["event-sourcing", "distributed-systems", "financial-ledger", "cryptographic-audit"]
+expert_time_estimate_hours = 6.0
+difficulty_explanation = "The engine must reconcile two independently ordered partitions of a payment stream while preserving exactly-once effects, validating HMAC signatures, applying compensating reversals only after their target is known, resolving snapshot/replay boundaries, and emitting stable Merkle roots and per-account balances. Hidden episodes vary clock skew, duplicate delivery, invalid signatures, cross-partition transfers, and reversal chains."
+solution_explanation = "The reference implementation validates every event before canonical ordering, deduplicates by event_id, buffers unresolved reversals and transfers, replays a canonical event DAG, computes per-account available and held balances, and derives a domain-separated Merkle tree over canonical accepted events."
+verification_explanation = "The verifier checks public ledger outputs against an independent replay implementation, mutates event order and duplicate delivery, tests invalid signatures and reversal chains, verifies conservation and Merkle proofs on held-out episodes, and ensures a no-op candidate cannot produce a passing ledger."
+
+[verifier]
+timeout_sec = 600
+environment_mode = "separate"
+
+[verifier.environment]
+network_mode = "public"
+cpus = 2
+memory_mb = 2048
+storage_mb = 4096
+
+[agent]
+timeout_sec = 72000
+
+[environment]
+build_timeout_sec = 600
+network_mode = "public"
+cpus = 2
+memory_mb = 2048
+storage_mb = 4096

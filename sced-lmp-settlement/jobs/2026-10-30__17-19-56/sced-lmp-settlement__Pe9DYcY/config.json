@@ -1,0 +1,11 @@
+{
+    "task": {
+        "path": "."
+    },
+    "trial_name": "sced-lmp-settlement__Pe9DYcY",
+    "trials_dir": "jobs\\2026-10-30__17-19-56",
+    "agent": {
+        "name": "nop"
+    },
+    "job_id": "441d5d65-cb9d-4248-a30e-a6420a5395d1"
+}

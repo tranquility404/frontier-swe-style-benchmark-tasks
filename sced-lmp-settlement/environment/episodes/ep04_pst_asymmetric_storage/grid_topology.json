@@ -1,0 +1,542 @@
+{
+  "episode_id": "ep04_pst_asymmetric_storage",
+  "base_mva": 100.0,
+  "ref_bus_id": "B01",
+  "num_intervals": 12,
+  "interval_hours": 0.25,
+  "bridge_limit_factor": 0.85,
+  "buses": [
+    {
+      "bus_id": "B01",
+      "zone": "Z1",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B02",
+      "zone": "Z2",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B03",
+      "zone": "Z3",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B04",
+      "zone": "Z1",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B05",
+      "zone": "Z2",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B06",
+      "zone": "Z3",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B07",
+      "zone": "Z1",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B08",
+      "zone": "Z2",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B09",
+      "zone": "Z3",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B10",
+      "zone": "Z1",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B11",
+      "zone": "Z2",
+      "base_kv": 230.0
+    },
+    {
+      "bus_id": "B12",
+      "zone": "Z3",
+      "base_kv": 230.0
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "L01",
+      "from_bus": "B01",
+      "to_bus": "B02",
+      "x_pu": 0.09931,
+      "f_max_mw": 133.66,
+      "alpha_emg": 1.024,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L02",
+      "from_bus": "B02",
+      "to_bus": "B03",
+      "x_pu": 0.15599,
+      "f_max_mw": 44.02,
+      "alpha_emg": 0.933,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L03",
+      "from_bus": "B03",
+      "to_bus": "B04",
+      "x_pu": 0.08635,
+      "f_max_mw": 129.56,
+      "alpha_emg": 1.014,
+      "pst_angle_deg": 1.65,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L04",
+      "from_bus": "B04",
+      "to_bus": "B05",
+      "x_pu": 0.06676,
+      "f_max_mw": 47.11,
+      "alpha_emg": 1.017,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L05",
+      "from_bus": "B05",
+      "to_bus": "B06",
+      "x_pu": 0.12307,
+      "f_max_mw": 127.51,
+      "alpha_emg": 0.965,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L06",
+      "from_bus": "B06",
+      "to_bus": "B07",
+      "x_pu": 0.09536,
+      "f_max_mw": 113.67,
+      "alpha_emg": 0.992,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L07",
+      "from_bus": "B07",
+      "to_bus": "B08",
+      "x_pu": 0.15287,
+      "f_max_mw": 120.88,
+      "alpha_emg": 1.001,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L08",
+      "from_bus": "B08",
+      "to_bus": "B09",
+      "x_pu": 0.10953,
+      "f_max_mw": 123.16,
+      "alpha_emg": 0.981,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L09",
+      "from_bus": "B09",
+      "to_bus": "B10",
+      "x_pu": 0.16382,
+      "f_max_mw": 136.53,
+      "alpha_emg": 1.014,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L10",
+      "from_bus": "B10",
+      "to_bus": "B11",
+      "x_pu": 0.09156,
+      "f_max_mw": 110.24,
+      "alpha_emg": 0.994,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": true
+    },
+    {
+      "line_id": "L11",
+      "from_bus": "B11",
+      "to_bus": "B12",
+      "x_pu": 0.13477,
+      "f_max_mw": 104.9,
+      "alpha_emg": 1.031,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    },
+    {
+      "line_id": "L12",
+      "from_bus": "B01",
+      "to_bus": "B12",
+      "x_pu": 0.09221,
+      "f_max_mw": 121.83,
+      "alpha_emg": 0.968,
+      "pst_angle_deg": -1.35,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    },
+    {
+      "line_id": "L13",
+      "from_bus": "B02",
+      "to_bus": "B12",
+      "x_pu": 0.11631,
+      "f_max_mw": 113.05,
+      "alpha_emg": 0.964,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    },
+    {
+      "line_id": "L14",
+      "from_bus": "B01",
+      "to_bus": "B09",
+      "x_pu": 0.16603,
+      "f_max_mw": 106.39,
+      "alpha_emg": 0.944,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    },
+    {
+      "line_id": "L15",
+      "from_bus": "B04",
+      "to_bus": "B06",
+      "x_pu": 0.08131,
+      "f_max_mw": 96.43,
+      "alpha_emg": 0.971,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    },
+    {
+      "line_id": "L16",
+      "from_bus": "B07",
+      "to_bus": "B10",
+      "x_pu": 0.09153,
+      "f_max_mw": 112.06,
+      "alpha_emg": 1.009,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    },
+    {
+      "line_id": "L17",
+      "from_bus": "B01",
+      "to_bus": "B04",
+      "x_pu": 0.11105,
+      "f_max_mw": 114.9,
+      "alpha_emg": 0.965,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    },
+    {
+      "line_id": "L18",
+      "from_bus": "B02",
+      "to_bus": "B05",
+      "x_pu": 0.111,
+      "f_max_mw": 103.15,
+      "alpha_emg": 0.992,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    },
+    {
+      "line_id": "L19",
+      "from_bus": "B09",
+      "to_bus": "B11",
+      "x_pu": 0.17897,
+      "f_max_mw": 105.81,
+      "alpha_emg": 0.948,
+      "pst_angle_deg": 0.0,
+      "is_monitored": true,
+      "is_contingency_candidate": false
+    }
+  ],
+  "generators": [
+    {
+      "gen_id": "G01",
+      "bus_id": "B01",
+      "p_min_mw": 22.85,
+      "p_max_mw": 125.97,
+      "ramp_up_mw_per_h": 102.03,
+      "ramp_down_mw_per_h": 52.5,
+      "p_init_mw": 69.25,
+      "initial_on_intervals": 4,
+      "min_uptime_intervals": 2,
+      "no_load_cost_per_h": 85.0,
+      "startup_cost": 480.35,
+      "must_run_schedule": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "droop_pu": 0.04,
+      "max_spin_mw": 37.79
+    },
+    {
+      "gen_id": "G02",
+      "bus_id": "B03",
+      "p_min_mw": 15.34,
+      "p_max_mw": 118.5,
+      "ramp_up_mw_per_h": 117.31,
+      "ramp_down_mw_per_h": 59.26,
+      "p_init_mw": 61.76,
+      "initial_on_intervals": 4,
+      "min_uptime_intervals": 2,
+      "no_load_cost_per_h": 150.21,
+      "startup_cost": 767.88,
+      "must_run_schedule": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "droop_pu": 0.05,
+      "max_spin_mw": 35.55
+    },
+    {
+      "gen_id": "G03",
+      "bus_id": "B05",
+      "p_min_mw": 16.33,
+      "p_max_mw": 122.9,
+      "ramp_up_mw_per_h": 194.67,
+      "ramp_down_mw_per_h": 145.28,
+      "p_init_mw": 64.29,
+      "initial_on_intervals": 4,
+      "min_uptime_intervals": 2,
+      "no_load_cost_per_h": 89.29,
+      "startup_cost": 580.52,
+      "must_run_schedule": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "droop_pu": 0.045,
+      "max_spin_mw": 36.87
+    },
+    {
+      "gen_id": "G04",
+      "bus_id": "B07",
+      "p_min_mw": 19.02,
+      "p_max_mw": 121.65,
+      "ramp_up_mw_per_h": 192.67,
+      "ramp_down_mw_per_h": 158.91,
+      "p_init_mw": 65.2,
+      "initial_on_intervals": 4,
+      "min_uptime_intervals": 2,
+      "no_load_cost_per_h": 108.76,
+      "startup_cost": 480.69,
+      "must_run_schedule": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "droop_pu": 0.06,
+      "max_spin_mw": 36.49
+    },
+    {
+      "gen_id": "G05",
+      "bus_id": "B09",
+      "p_min_mw": 19.01,
+      "p_max_mw": 128.68,
+      "ramp_up_mw_per_h": 203.81,
+      "ramp_down_mw_per_h": 110.91,
+      "p_init_mw": 68.36,
+      "initial_on_intervals": 1,
+      "min_uptime_intervals": 4,
+      "no_load_cost_per_h": 885.59,
+      "startup_cost": 1997.97,
+      "must_run_schedule": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "droop_pu": 0.038,
+      "max_spin_mw": 38.6
+    },
+    {
+      "gen_id": "G06",
+      "bus_id": "B11",
+      "p_min_mw": 22.25,
+      "p_max_mw": 130.87,
+      "ramp_up_mw_per_h": 207.29,
+      "ramp_down_mw_per_h": 58.0,
+      "p_init_mw": 0.0,
+      "initial_on_intervals": 0,
+      "min_uptime_intervals": 3,
+      "no_load_cost_per_h": 449.69,
+      "startup_cost": 2495.76,
+      "must_run_schedule": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "droop_pu": 0.052,
+      "max_spin_mw": 39.26
+    }
+  ],
+  "storage_units": [
+    {
+      "storage_id": "S01",
+      "bus_id": "B02",
+      "p_ch_max_mw": 20.1,
+      "p_dis_max_mw": 25.19,
+      "eta_ch": 0.9589,
+      "eta_dis": 0.9633,
+      "retention_factor": 0.98878,
+      "soc_min_mwh": 10.69,
+      "soc_max_mwh": 71.27,
+      "soc_init_mwh": 34.21,
+      "soc_terminal_min_mwh": 38.49,
+      "marginal_throughput_cost_per_mwh": 0.65,
+      "max_spin_mw": 12.6,
+      "reserve_duration_hours": 1.0
+    },
+    {
+      "storage_id": "S02",
+      "bus_id": "B04",
+      "p_ch_max_mw": 26.99,
+      "p_dis_max_mw": 18.95,
+      "eta_ch": 0.9449,
+      "eta_dis": 0.9343,
+      "retention_factor": 0.98616,
+      "soc_min_mwh": 7.23,
+      "soc_max_mwh": 48.19,
+      "soc_init_mwh": 23.13,
+      "soc_terminal_min_mwh": 26.02,
+      "marginal_throughput_cost_per_mwh": 0.82,
+      "max_spin_mw": 9.47,
+      "reserve_duration_hours": 1.25
+    },
+    {
+      "storage_id": "S03",
+      "bus_id": "B06",
+      "p_ch_max_mw": 25.47,
+      "p_dis_max_mw": 16.89,
+      "eta_ch": 0.925,
+      "eta_dis": 0.949,
+      "retention_factor": 0.98848,
+      "soc_min_mwh": 9.7,
+      "soc_max_mwh": 64.68,
+      "soc_init_mwh": 31.05,
+      "soc_terminal_min_mwh": 34.93,
+      "marginal_throughput_cost_per_mwh": 0.99,
+      "max_spin_mw": 8.45,
+      "reserve_duration_hours": 1.0
+    }
+  ],
+  "lses": [
+    {
+      "lse_id": "LSE_01",
+      "name": "Regional Utility 1",
+      "bus_ids": [
+        "B01",
+        "B04",
+        "B07",
+        "B10"
+      ]
+    },
+    {
+      "lse_id": "LSE_02",
+      "name": "Regional Utility 2",
+      "bus_ids": [
+        "B02",
+        "B05",
+        "B08",
+        "B11"
+      ]
+    },
+    {
+      "lse_id": "LSE_03",
+      "name": "Regional Utility 3",
+      "bus_ids": [
+        "B03",
+        "B06",
+        "B09",
+        "B12"
+      ]
+    }
+  ],
+  "min_spinning_reserve_mw": 52.35,
+  "reserve_scarcity_penalty_usd_per_mwh": 500.0,
+  "reserve_duration_hours": 1.0
+}

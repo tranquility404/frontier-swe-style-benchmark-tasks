@@ -1,0 +1,7 @@
+Agent 'oracle' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__4eea2f368a8e6c22e264b5443c49d4d7: docker inspect returned 1
+Collecting main service artifacts
+Skipping image OS validation for hb__faf9e462d08d330be032074670596fdc: docker inspect returned 1
+Trial frontier-task-event-reconciliati__XKAQHUi failed: No reward file found at jobs\2026-10-30__17-19-59\frontier-task-event-reconciliati__XKAQHUi\verifier\reward.txt or jobs\2026-10-30__17-19-59\frontier-task-event-reconciliati__XKAQHUi\verifier\reward.json
+Exception RewardFileNotFoundError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached

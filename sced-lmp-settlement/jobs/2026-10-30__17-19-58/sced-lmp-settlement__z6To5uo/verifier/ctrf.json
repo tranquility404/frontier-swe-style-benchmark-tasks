@@ -1,0 +1,239 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-10-30T11:53:15.725401+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "9.1.1"
+        },
+        "summary": {
+            "tests": 23,
+            "passed": 22,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793361175502,
+            "stop": 1793361195725
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_01_spec_immutability",
+                "status": "passed",
+                "duration": 2,
+                "start": 1793361176812,
+                "stop": 1793361176814,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_02_public_episodes_unmodified",
+                "status": "passed",
+                "duration": 5,
+                "start": 1793361176814,
+                "stop": 1793361176819,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_03_deliverable_presence_and_top_schema",
+                "status": "passed",
+                "duration": 9,
+                "start": 1793361176819,
+                "stop": 1793361176828,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_04_scada_telemetry_filtering_and_imputation",
+                "status": "passed",
+                "duration": 11400,
+                "start": 1793361176829,
+                "stop": 1793361188229,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_05_radial_bridge_and_contingency_topology",
+                "status": "passed",
+                "duration": 2,
+                "start": 1793361188230,
+                "stop": 1793361188232,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_06_generator_commitment_uptime_carryover",
+                "status": "passed",
+                "duration": 1,
+                "start": 1793361188233,
+                "stop": 1793361188234,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_07_nodal_power_balance_and_net_injections",
+                "status": "passed",
+                "duration": 3,
+                "start": 1793361188234,
+                "stop": 1793361188237,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_08_thermal_capacity_and_ramp_trajectories",
+                "status": "passed",
+                "duration": 15,
+                "start": 1793361188237,
+                "stop": 1793361188252,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_09_spinning_reserve_satisfaction_and_scarcity",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 97,
+                "start": 1793361188252,
+                "stop": 1793361188349,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "public_ledger = {'schema_version': '1.0', 'episodes': {'ep01_radial_bridge': {'episode_id': 'ep01_radial_bridge', 'num_intervals': 8, ...134, 'corrupt_or_spike_dropped': 22, 'duplicate_seq_dropped': 30, 'stale_or_low_quality_imputed': 37, ...}, ...}, ...}}\npublic_refs = {'ep01_radial_bridge': {'topology': {'episode_id': 'ep01_radial_bridge', 'base_mva': 100.0, 'ref_bus_id': 'B01', 'num_...       -0.00527801,  0.00393333,  0.10928186,  0.18476315, -0.05030209,\n        -0.23593469, -0.07294044]]), ...}, ...}\n\n    def test_09_spinning_reserve_satisfaction_and_scarcity(public_ledger, public_refs):\n        \"\"\"Check 9: Verify system spinning reserve requirement satisfaction and scarcity clearing.\"\"\"\n        for ep_id in PUBLIC_EPISODE_IDS:\n            disp = public_ledger[\"episodes\"][ep_id][\"dispatch\"]\n            ref = public_refs[ep_id]\n            topo = ref[\"topology\"]\n            T = int(topo[\"num_intervals\"])\n            r_req = float(topo.get(\"min_spinning_reserve_mw\", 0.0))\n    \n            for t in range(T):\n                gen_spin = sum(disp[\"spinning_reserve_mw\"][g[\"gen_id\"]][t] for g in topo[\"generators\"])\n                stor_spin = sum(disp[\"storage_spin_mw\"][s[\"storage_id\"]][t] for s in topo.get(\"storage_units\", []))\n                scarcity = disp[\"reserve_scarcity_mw\"][t]\n                tot_spin = gen_spin + stor_spin + scarcity\n                assert tot_spin >= r_req - 1e-3, f\"{ep_id} t={t}: reserve requirement deficit\"\n                sced_snip = _read_candidate_producer_snippet(\"sced_solver.py\", [\"scarcity\", \"max_spin\", \"ramp_up\"])\n                np.testing.assert_allclose(\n                    disp[\"reserve_scarcity_mw\"],\n                    ref[\"reserve_scarcity_mw\"],\n                    rtol=1e-4,\n                    atol=1e-3,\n                    err_msg=(\n                        f\"[CONTRACT RULE] instruction.md #3 & /app/grid_settlement_spec.md Sections 4.2.1 & 4.2.4: \"\n>                       f\"System spinning reserve requirement with 10-minute synchronized reserve ramp cap min(max_spin_mw_g, R_g^up / 6.0) * u_{g,t}.\\n\"\n                                                                                                                                                 ^\n                        f\"[AUTHORITATIVE INPUTS] {ep_id} min_spinning_reserve_mw={r_req}\\n\"\n                        f\"[CANDIDATE PRODUCER & END-TO-END TRACE] Candidate reserve_scarcity_mw={disp['reserve_scarcity_mw']} \"\n                        f\"vs Expected={ref['reserve_scarcity_mw']} | {sced_snip}\"\n                    ),\n                )\nE               NameError: name 'g' is not defined\n\ntest_outputs.py:1314: NameError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_outputs.py::test_10_storage_soc_dynamics_and_1hour_duration_buffer",
+                "status": "passed",
+                "duration": 8,
+                "start": 1793361188350,
+                "stop": 1793361188358,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_11_dc_power_flow_and_pst_base_flows",
+                "status": "passed",
+                "duration": 39,
+                "start": 1793361188358,
+                "stop": 1793361188397,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_12_n0_n1_and_g1_post_contingency_thermal_compliance",
+                "status": "passed",
+                "duration": 33,
+                "start": 1793361188397,
+                "stop": 1793361188430,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_13_optimal_dispatch_and_variable_cost",
+                "status": "passed",
+                "duration": 120,
+                "start": 1793361188430,
+                "stop": 1793361188550,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_14_reserve_mcp_clearing_and_hierarchy",
+                "status": "passed",
+                "duration": 3,
+                "start": 1793361188550,
+                "stop": 1793361188553,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_15_kkt_shadow_price_lmp_decomposition",
+                "status": "passed",
+                "duration": 50,
+                "start": 1793361188553,
+                "stop": 1793361188603,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_16_congestion_rent_and_pst_loop_flow_identities",
+                "status": "passed",
+                "duration": 18,
+                "start": 1793361188603,
+                "stop": 1793361188621,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_17_two_settlement_energy_and_operating_reserve_revenues",
+                "status": "passed",
+                "duration": 3,
+                "start": 1793361188622,
+                "stop": 1793361188625,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_18_three_part_production_cost_and_netted_mwp_uplift",
+                "status": "passed",
+                "duration": 2,
+                "start": 1793361188625,
+                "stop": 1793361188627,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_19_lse_load_share_rebates_and_uplift_allocation",
+                "status": "passed",
+                "duration": 1,
+                "start": 1793361188628,
+                "stop": 1793361188629,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_20_heldout_episodes_execution_and_telemetry",
+                "status": "passed",
+                "duration": 5437,
+                "start": 1793361188629,
+                "stop": 1793361194066,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_21_heldout_episodes_primal_dispatch_and_security",
+                "status": "passed",
+                "duration": 33,
+                "start": 1793361194066,
+                "stop": 1793361194099,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_22_heldout_episodes_prices_and_settlement_ledger",
+                "status": "passed",
+                "duration": 12,
+                "start": 1793361194099,
+                "stop": 1793361194111,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_23_dynamic_unseen_variant_clearing",
+                "status": "passed",
+                "duration": 1613,
+                "start": 1793361194111,
+                "stop": 1793361195724,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1 @@
+{"event_id":"b1","partition":"p1","sequence":1,"event_type":"credit","account_id":"alice","amount_cents":1000,"currency":"USD","occurred_at":"2026-01-01T00:00:00Z","causation_id":null,"payload":{},"signature":"a56a224cfbe7ba98b8bafe9f05fa90d1ab39d0938c5a07637caa8d5462aa0b27"}

@@ -1,0 +1,73 @@
+{
+  "episodes": {
+    "public_basic": {
+      "accepted_event_ids": [
+        "a1"
+      ],
+      "balances": {
+        "alice": {
+          "available_cents": 1000,
+          "currency": "USD",
+          "held_cents": 0
+        },
+        "bob": {
+          "available_cents": 0,
+          "currency": "USD",
+          "held_cents": 0
+        }
+      },
+      "chain_head": "187da3b8d87ed76bd6468b3e4bff05038bfc832b04fcf61e9dbda60e31755527",
+      "conservation": {
+        "total_cents": 1000
+      },
+      "counters": {
+        "accepted": 1,
+        "duplicate_conflicts": 0,
+        "input_events": 2,
+        "rejected": 1
+      },
+      "merkle_root": "540da260225f4ab529704d4e76128c45bb837082037341b2c85efc3a356dea7a",
+      "proofs": {
+        "a1": []
+      },
+      "rejected_events": [
+        {
+          "event_id": "a2",
+          "reason": "invalid_signature"
+        }
+      ]
+    },
+    "public_reorder": {
+      "accepted_event_ids": [
+        "b1"
+      ],
+      "balances": {
+        "alice": {
+          "available_cents": 1000,
+          "currency": "USD",
+          "held_cents": 0
+        },
+        "bob": {
+          "available_cents": 0,
+          "currency": "USD",
+          "held_cents": 0
+        }
+      },
+      "chain_head": "0d9f96671f18227ded91a1a13b8e36dc53ac8fb4d38395e471d08b482201d84c",
+      "conservation": {
+        "total_cents": 1000
+      },
+      "counters": {
+        "accepted": 1,
+        "duplicate_conflicts": 0,
+        "input_events": 1,
+        "rejected": 0
+      },
+      "merkle_root": "30d8d5c299ad0fed898ccf9e929027f20ae575eac3e9ffca855edb3f5aea6ce9",
+      "proofs": {
+        "b1": []
+      },
+      "rejected_events": []
+    }
+  }
+}

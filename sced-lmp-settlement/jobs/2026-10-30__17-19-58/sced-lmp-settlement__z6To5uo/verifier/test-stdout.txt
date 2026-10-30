@@ -1,0 +1,74 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.18, pytest-9.1.1, pluggy-1.7.0
+rootdir: /tests
+plugins: json-ctrf-0.5.2
+collected 23 items
+
+test_outputs.py ........F..............                                  [100%]
+
+=================================== FAILURES ===================================
+______________ test_09_spinning_reserve_satisfaction_and_scarcity ______________
+
+public_ledger = {'schema_version': '1.0', 'episodes': {'ep01_radial_bridge': {'episode_id': 'ep01_radial_bridge', 'num_intervals': 8, ...134, 'corrupt_or_spike_dropped': 22, 'duplicate_seq_dropped': 30, 'stale_or_low_quality_imputed': 37, ...}, ...}, ...}}
+public_refs = {'ep01_radial_bridge': {'topology': {'episode_id': 'ep01_radial_bridge', 'base_mva': 100.0, 'ref_bus_id': 'B01', 'num_...       -0.00527801,  0.00393333,  0.10928186,  0.18476315, -0.05030209,
+        -0.23593469, -0.07294044]]), ...}, ...}
+
+    def test_09_spinning_reserve_satisfaction_and_scarcity(public_ledger, public_refs):
+        """Check 9: Verify system spinning reserve requirement satisfaction and scarcity clearing."""
+        for ep_id in PUBLIC_EPISODE_IDS:
+            disp = public_ledger["episodes"][ep_id]["dispatch"]
+            ref = public_refs[ep_id]
+            topo = ref["topology"]
+            T = int(topo["num_intervals"])
+            r_req = float(topo.get("min_spinning_reserve_mw", 0.0))
+    
+            for t in range(T):
+                gen_spin = sum(disp["spinning_reserve_mw"][g["gen_id"]][t] for g in topo["generators"])
+                stor_spin = sum(disp["storage_spin_mw"][s["storage_id"]][t] for s in topo.get("storage_units", []))
+                scarcity = disp["reserve_scarcity_mw"][t]
+                tot_spin = gen_spin + stor_spin + scarcity
+                assert tot_spin >= r_req - 1e-3, f"{ep_id} t={t}: reserve requirement deficit"
+                sced_snip = _read_candidate_producer_snippet("sced_solver.py", ["scarcity", "max_spin", "ramp_up"])
+                np.testing.assert_allclose(
+                    disp["reserve_scarcity_mw"],
+                    ref["reserve_scarcity_mw"],
+                    rtol=1e-4,
+                    atol=1e-3,
+                    err_msg=(
+                        f"[CONTRACT RULE] instruction.md #3 & /app/grid_settlement_spec.md Sections 4.2.1 & 4.2.4: "
+>                       f"System spinning reserve requirement with 10-minute synchronized reserve ramp cap min(max_spin_mw_g, R_g^up / 6.0) * u_{g,t}.\n"
+                                                                                                                                                 ^
+                        f"[AUTHORITATIVE INPUTS] {ep_id} min_spinning_reserve_mw={r_req}\n"
+                        f"[CANDIDATE PRODUCER & END-TO-END TRACE] Candidate reserve_scarcity_mw={disp['reserve_scarcity_mw']} "
+                        f"vs Expected={ref['reserve_scarcity_mw']} | {sced_snip}"
+                    ),
+                )
+E               NameError: name 'g' is not defined
+
+test_outputs.py:1314: NameError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED test_outputs.py::test_01_spec_immutability
+PASSED test_outputs.py::test_02_public_episodes_unmodified
+PASSED test_outputs.py::test_03_deliverable_presence_and_top_schema
+PASSED test_outputs.py::test_04_scada_telemetry_filtering_and_imputation
+PASSED test_outputs.py::test_05_radial_bridge_and_contingency_topology
+PASSED test_outputs.py::test_06_generator_commitment_uptime_carryover
+PASSED test_outputs.py::test_07_nodal_power_balance_and_net_injections
+PASSED test_outputs.py::test_08_thermal_capacity_and_ramp_trajectories
+PASSED test_outputs.py::test_10_storage_soc_dynamics_and_1hour_duration_buffer
+PASSED test_outputs.py::test_11_dc_power_flow_and_pst_base_flows
+PASSED test_outputs.py::test_12_n0_n1_and_g1_post_contingency_thermal_compliance
+PASSED test_outputs.py::test_13_optimal_dispatch_and_variable_cost
+PASSED test_outputs.py::test_14_reserve_mcp_clearing_and_hierarchy
+PASSED test_outputs.py::test_15_kkt_shadow_price_lmp_decomposition
+PASSED test_outputs.py::test_16_congestion_rent_and_pst_loop_flow_identities
+PASSED test_outputs.py::test_17_two_settlement_energy_and_operating_reserve_revenues
+PASSED test_outputs.py::test_18_three_part_production_cost_and_netted_mwp_uplift
+PASSED test_outputs.py::test_19_lse_load_share_rebates_and_uplift_allocation
+PASSED test_outputs.py::test_20_heldout_episodes_execution_and_telemetry
+PASSED test_outputs.py::test_21_heldout_episodes_primal_dispatch_and_security
+PASSED test_outputs.py::test_22_heldout_episodes_prices_and_settlement_ledger
+PASSED test_outputs.py::test_23_dynamic_unseen_variant_clearing
+FAILED test_outputs.py::test_09_spinning_reserve_satisfaction_and_scarcity - ...
+======================== 1 failed, 22 passed in 20.22s =========================

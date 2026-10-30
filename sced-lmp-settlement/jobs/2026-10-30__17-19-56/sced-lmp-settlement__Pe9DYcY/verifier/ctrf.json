@@ -1,0 +1,259 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-10-30T11:53:05.209560+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "9.1.1"
+        },
+        "summary": {
+            "tests": 23,
+            "passed": 2,
+            "failed": 21,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793361175437,
+            "stop": 1793361185208
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_01_spec_immutability",
+                "status": "passed",
+                "duration": 4,
+                "start": 1793361176623,
+                "stop": 1793361176627,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_02_public_episodes_unmodified",
+                "status": "passed",
+                "duration": 8,
+                "start": 1793361176628,
+                "stop": 1793361176636,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_03_deliverable_presence_and_top_schema",
+                "status": "failed",
+                "duration": 244,
+                "start": 1793361176637,
+                "stop": 1793361176881,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_04_scada_telemetry_filtering_and_imputation",
+                "status": "failed",
+                "duration": 104,
+                "start": 1793361176881,
+                "stop": 1793361176985,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_05_radial_bridge_and_contingency_topology",
+                "status": "failed",
+                "duration": 84,
+                "start": 1793361176986,
+                "stop": 1793361177070,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_06_generator_commitment_uptime_carryover",
+                "status": "failed",
+                "duration": 131,
+                "start": 1793361177071,
+                "stop": 1793361177202,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_07_nodal_power_balance_and_net_injections",
+                "status": "failed",
+                "duration": 263,
+                "start": 1793361177203,
+                "stop": 1793361177466,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_08_thermal_capacity_and_ramp_trajectories",
+                "status": "failed",
+                "duration": 134,
+                "start": 1793361177467,
+                "stop": 1793361177601,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_09_spinning_reserve_satisfaction_and_scarcity",
+                "status": "failed",
+                "duration": 124,
+                "start": 1793361177601,
+                "stop": 1793361177725,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_10_storage_soc_dynamics_and_1hour_duration_buffer",
+                "status": "failed",
+                "duration": 139,
+                "start": 1793361177726,
+                "stop": 1793361177865,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_11_dc_power_flow_and_pst_base_flows",
+                "status": "failed",
+                "duration": 246,
+                "start": 1793361177866,
+                "stop": 1793361178112,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_12_n0_n1_and_g1_post_contingency_thermal_compliance",
+                "status": "failed",
+                "duration": 147,
+                "start": 1793361178112,
+                "stop": 1793361178259,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_13_optimal_dispatch_and_variable_cost",
+                "status": "failed",
+                "duration": 158,
+                "start": 1793361178260,
+                "stop": 1793361178418,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_14_reserve_mcp_clearing_and_hierarchy",
+                "status": "failed",
+                "duration": 191,
+                "start": 1793361178419,
+                "stop": 1793361178610,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_15_kkt_shadow_price_lmp_decomposition",
+                "status": "failed",
+                "duration": 286,
+                "start": 1793361178610,
+                "stop": 1793361178896,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_16_congestion_rent_and_pst_loop_flow_identities",
+                "status": "failed",
+                "duration": 217,
+                "start": 1793361178897,
+                "stop": 1793361179114,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_17_two_settlement_energy_and_operating_reserve_revenues",
+                "status": "failed",
+                "duration": 210,
+                "start": 1793361179115,
+                "stop": 1793361179325,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_18_three_part_production_cost_and_netted_mwp_uplift",
+                "status": "failed",
+                "duration": 227,
+                "start": 1793361179326,
+                "stop": 1793361179553,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_19_lse_load_share_rebates_and_uplift_allocation",
+                "status": "failed",
+                "duration": 135,
+                "start": 1793361179554,
+                "stop": 1793361179689,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def public_ledger() -> dict:\n>       assert os.path.exists(LEDGER_PATH), f\"Deliverable missing: {LEDGER_PATH}\"\nE       AssertionError: Deliverable missing: /app/settlement_ledger.json\nE       assert False\nE        +  where False = <function exists at 0x74dd44b639c0>('/app/settlement_ledger.json')\nE        +    where <function exists at 0x74dd44b639c0> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntest_outputs.py:1036: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_20_heldout_episodes_execution_and_telemetry",
+                "status": "failed",
+                "duration": 3671,
+                "start": 1793361179690,
+                "stop": 1793361183361,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def heldout_execution() -> Tuple[dict, Dict[str, dict]]:\n        assert os.path.exists(SETTLE_SCRIPT), f\"Entrypoint script missing: {SETTLE_SCRIPT}\"\n    \n        ho_refs = {}\n        for ep_id in HELDOUT_EPISODE_IDS:\n            ep_dir = os.path.join(HELDOUT_PRISTINE_DIR, ep_id)\n            ho_refs[ep_id] = _verifier_solve_btheta_reference(ep_dir)\n    \n        tmp_dir = tempfile.mkdtemp(prefix=\"ho_test_\")\n        cand_episodes_dir = os.path.join(tmp_dir, \"episodes\")\n        shutil.copytree(HELDOUT_PRISTINE_DIR, cand_episodes_dir)\n        out_json = os.path.join(tmp_dir, \"heldout_ledger.json\")\n    \n        os.chmod(tmp_dir, 0o777)\n        for root_d, dirs, files in os.walk(tmp_dir):\n            os.chmod(root_d, 0o777)\n            for d in dirs:\n                os.chmod(os.path.join(root_d, d), 0o777)\n            for f in files:\n                os.chmod(os.path.join(root_d, f), 0o666)\n    \n        cmd = [sys.executable, SETTLE_SCRIPT, \"--episodes-dir\", cand_episodes_dir, \"--output\", out_json]\n        res = _run_as_unprivileged(cmd, cwd=APP_DIR, timeout=120)\n>       assert res.returncode == 0, f\"Execution failed on heldout episodes:\\nSTDOUT:\\n{res.stdout}\\nSTDERR:\\n{res.stderr}\"\nE       AssertionError: Execution failed on heldout episodes:\nE         STDOUT:\nE         \nE         STDERR:\nE         Traceback (most recent call last):\nE           File \"/app/gridop/settle.py\", line 82, in <module>\nE             sys.exit(main())\nE                      ^^^^^^\nE           File \"/app/gridop/settle.py\", line 77, in main\nE             process_all_episodes(episodes_dir, output_path)\nE           File \"/app/gridop/settle.py\", line 47, in process_all_episodes\nE             telemetry = parse_scada_telemetry(bin_path, topology, offers)\nE                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/app/gridop/telemetry.py\", line 33, in parse_scada_telemetry\nE             raise NotImplementedError(\"Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\")\nE         NotImplementedError: Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/usr/local/bin/python3.11', '/app/gridop/settle.py', '--episodes-dir', '/tmp/ho_test_njjp6l4j/...tion 2\")\\nNotImplementedError: Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\\n').returncode\n\ntest_outputs.py:1097: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_21_heldout_episodes_primal_dispatch_and_security",
+                "status": "failed",
+                "duration": 208,
+                "start": 1793361183362,
+                "stop": 1793361183570,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def heldout_execution() -> Tuple[dict, Dict[str, dict]]:\n        assert os.path.exists(SETTLE_SCRIPT), f\"Entrypoint script missing: {SETTLE_SCRIPT}\"\n    \n        ho_refs = {}\n        for ep_id in HELDOUT_EPISODE_IDS:\n            ep_dir = os.path.join(HELDOUT_PRISTINE_DIR, ep_id)\n            ho_refs[ep_id] = _verifier_solve_btheta_reference(ep_dir)\n    \n        tmp_dir = tempfile.mkdtemp(prefix=\"ho_test_\")\n        cand_episodes_dir = os.path.join(tmp_dir, \"episodes\")\n        shutil.copytree(HELDOUT_PRISTINE_DIR, cand_episodes_dir)\n        out_json = os.path.join(tmp_dir, \"heldout_ledger.json\")\n    \n        os.chmod(tmp_dir, 0o777)\n        for root_d, dirs, files in os.walk(tmp_dir):\n            os.chmod(root_d, 0o777)\n            for d in dirs:\n                os.chmod(os.path.join(root_d, d), 0o777)\n            for f in files:\n                os.chmod(os.path.join(root_d, f), 0o666)\n    \n        cmd = [sys.executable, SETTLE_SCRIPT, \"--episodes-dir\", cand_episodes_dir, \"--output\", out_json]\n        res = _run_as_unprivileged(cmd, cwd=APP_DIR, timeout=120)\n>       assert res.returncode == 0, f\"Execution failed on heldout episodes:\\nSTDOUT:\\n{res.stdout}\\nSTDERR:\\n{res.stderr}\"\nE       AssertionError: Execution failed on heldout episodes:\nE         STDOUT:\nE         \nE         STDERR:\nE         Traceback (most recent call last):\nE           File \"/app/gridop/settle.py\", line 82, in <module>\nE             sys.exit(main())\nE                      ^^^^^^\nE           File \"/app/gridop/settle.py\", line 77, in main\nE             process_all_episodes(episodes_dir, output_path)\nE           File \"/app/gridop/settle.py\", line 47, in process_all_episodes\nE             telemetry = parse_scada_telemetry(bin_path, topology, offers)\nE                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/app/gridop/telemetry.py\", line 33, in parse_scada_telemetry\nE             raise NotImplementedError(\"Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\")\nE         NotImplementedError: Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/usr/local/bin/python3.11', '/app/gridop/settle.py', '--episodes-dir', '/tmp/ho_test_njjp6l4j/...tion 2\")\\nNotImplementedError: Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\\n').returncode\n\ntest_outputs.py:1097: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_22_heldout_episodes_prices_and_settlement_ledger",
+                "status": "failed",
+                "duration": 153,
+                "start": 1793361183571,
+                "stop": 1793361183724,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def heldout_execution() -> Tuple[dict, Dict[str, dict]]:\n        assert os.path.exists(SETTLE_SCRIPT), f\"Entrypoint script missing: {SETTLE_SCRIPT}\"\n    \n        ho_refs = {}\n        for ep_id in HELDOUT_EPISODE_IDS:\n            ep_dir = os.path.join(HELDOUT_PRISTINE_DIR, ep_id)\n            ho_refs[ep_id] = _verifier_solve_btheta_reference(ep_dir)\n    \n        tmp_dir = tempfile.mkdtemp(prefix=\"ho_test_\")\n        cand_episodes_dir = os.path.join(tmp_dir, \"episodes\")\n        shutil.copytree(HELDOUT_PRISTINE_DIR, cand_episodes_dir)\n        out_json = os.path.join(tmp_dir, \"heldout_ledger.json\")\n    \n        os.chmod(tmp_dir, 0o777)\n        for root_d, dirs, files in os.walk(tmp_dir):\n            os.chmod(root_d, 0o777)\n            for d in dirs:\n                os.chmod(os.path.join(root_d, d), 0o777)\n            for f in files:\n                os.chmod(os.path.join(root_d, f), 0o666)\n    \n        cmd = [sys.executable, SETTLE_SCRIPT, \"--episodes-dir\", cand_episodes_dir, \"--output\", out_json]\n        res = _run_as_unprivileged(cmd, cwd=APP_DIR, timeout=120)\n>       assert res.returncode == 0, f\"Execution failed on heldout episodes:\\nSTDOUT:\\n{res.stdout}\\nSTDERR:\\n{res.stderr}\"\nE       AssertionError: Execution failed on heldout episodes:\nE         STDOUT:\nE         \nE         STDERR:\nE         Traceback (most recent call last):\nE           File \"/app/gridop/settle.py\", line 82, in <module>\nE             sys.exit(main())\nE                      ^^^^^^\nE           File \"/app/gridop/settle.py\", line 77, in main\nE             process_all_episodes(episodes_dir, output_path)\nE           File \"/app/gridop/settle.py\", line 47, in process_all_episodes\nE             telemetry = parse_scada_telemetry(bin_path, topology, offers)\nE                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/app/gridop/telemetry.py\", line 33, in parse_scada_telemetry\nE             raise NotImplementedError(\"Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\")\nE         NotImplementedError: Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/usr/local/bin/python3.11', '/app/gridop/settle.py', '--episodes-dir', '/tmp/ho_test_njjp6l4j/...tion 2\")\\nNotImplementedError: Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\\n').returncode\n\ntest_outputs.py:1097: AssertionError"
+            },
+            {
+                "name": "test_outputs.py::test_23_dynamic_unseen_variant_clearing",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 1482,
+                "start": 1793361183725,
+                "stop": 1793361185207,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_23_dynamic_unseen_variant_clearing():\n        \"\"\"Check 23: Verify engine dynamically clears an unseen, perturbed episode variant without hard-coding.\"\"\"\n        assert os.path.exists(SETTLE_SCRIPT), f\"Entrypoint script missing: {SETTLE_SCRIPT}\"\n    \n        tmp_dir = tempfile.mkdtemp(prefix=\"dyn_test_\")\n        dyn_ep_id = \"dyn_ep_variant\"\n        dyn_ep_dir = os.path.join(tmp_dir, dyn_ep_id)\n        os.makedirs(dyn_ep_dir, exist_ok=True)\n    \n        base_dir = os.path.join(HELDOUT_PRISTINE_DIR, \"ho01_bridge_pst_hybrid\")\n        shutil.copy(os.path.join(base_dir, \"grid_topology.json\"), os.path.join(dyn_ep_dir, \"grid_topology.json\"))\n        shutil.copy(os.path.join(base_dir, \"scada_telemetry.bin\"), os.path.join(dyn_ep_dir, \"scada_telemetry.bin\"))\n    \n        with open(os.path.join(base_dir, \"market_offers.json\"), \"r\") as f:\n            offers = json.load(f)\n        offers[\"episode_id\"] = dyn_ep_id\n        for gid, blocks in offers.get(\"generator_offers\", {}).items():\n            for b in blocks:\n                b[\"price_per_mwh\"] = round(float(b[\"price_per_mwh\"]) * 1.05 + 1.25, 4)\n        with open(os.path.join(dyn_ep_dir, \"market_offers.json\"), \"w\") as f:\n            json.dump(offers, f, indent=2)\n    \n        dyn_ref = _verifier_solve_btheta_reference(dyn_ep_dir)\n    \n        os.chmod(tmp_dir, 0o777)\n        for root_d, dirs, files in os.walk(tmp_dir):\n            os.chmod(root_d, 0o777)\n            for d in dirs:\n                os.chmod(os.path.join(root_d, d), 0o777)\n            for f in files:\n                os.chmod(os.path.join(root_d, f), 0o666)\n    \n        out_json = os.path.join(tmp_dir, \"dynamic_ledger.json\")\n        cmd = [sys.executable, SETTLE_SCRIPT, \"--episodes-dir\", tmp_dir, \"--output\", out_json]\n        res = _run_as_unprivileged(cmd, cwd=APP_DIR, timeout=120)\n>       assert res.returncode == 0, f\"Execution failed on dynamic variant:\\nSTDOUT:\\n{res.stdout}\\nSTDERR:\\n{res.stderr}\"\nE       AssertionError: Execution failed on dynamic variant:\nE         STDOUT:\nE         \nE         STDERR:\nE         Traceback (most recent call last):\nE           File \"/app/gridop/settle.py\", line 82, in <module>\nE             sys.exit(main())\nE                      ^^^^^^\nE           File \"/app/gridop/settle.py\", line 77, in main\nE             process_all_episodes(episodes_dir, output_path)\nE           File \"/app/gridop/settle.py\", line 47, in process_all_episodes\nE             telemetry = parse_scada_telemetry(bin_path, topology, offers)\nE                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/app/gridop/telemetry.py\", line 33, in parse_scada_telemetry\nE             raise NotImplementedError(\"Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\")\nE         NotImplementedError: Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/usr/local/bin/python3.11', '/app/gridop/settle.py', '--episodes-dir', '/tmp/dyn_test_cq1vw673...tion 2\")\\nNotImplementedError: Implement SCADA binary telemetry pipeline per /app/grid_settlement_spec.md Section 2\\n').returncode\n\ntest_outputs.py:1702: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}
